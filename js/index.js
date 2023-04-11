@@ -10,11 +10,10 @@ let showItem = function() {
     let blueNumber = Math.floor(Math.random() * 255);
     let colorCode = [redNumber, greenNumber, blueNumber];
     let colorCodeString = colorCode.join(', ')
-    let colorCodeBack = colorCode.join(',');
+    let colorCodeBack = `rgb(${colorCodeString})`;
     
     document.getElementById('colorcode').innerHTML = colorCodeString;
-    let background = document.getElementById('background').style.backgroundColor = `:rgb ` + colorCodeString;
-    console.log(background)
+    document.body.style.backgroundColor = colorCodeBack;
 }
 
 button.addEventListener('mousedown', showItem);
